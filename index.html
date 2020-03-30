@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TEST BUTTON HTML JS</title>
+        <style>
+            body{
+                background-color: rgb(235, 223, 235);
+            }
+            #aDiv{
+                width: 550px;
+                background-color: rgb(209, 198, 209);
+                padding: 2%;
+                border: outset rgb(240, 237, 240);
+            }
+            #button{
+                border: outset rgb(230, 221, 230);
+                cursor: progress;
+            }
+            #form{
+                margin-top: 5%;
+                border: inset;
+            }
+            #code{
+                background-color: rgb(184, 175, 184);
+                cursor: wait;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="aDiv">
+        <button id="button">Hey</button>
+        <form id="form">
+            <input type="text" id="code">
+        </form>
+    </div>
+    </body>
+    <script>
+    var attempt = 0;
+        var aDiv = document.getElementById("aDiv");
+        var button = document.getElementById("button");
+        var code = document.getElementById("code");
+        var aButton = document.createElement("button");
+            aButton.appendChild(document.createTextNode("hey")); 
+            var OnClickaButton = function(){
+                //yes it's 5 times.
+                if(attempt < 5){
+                    if(code.value == "keit"){
+                        alert("Correct.");
+                        document.body.innerHTML="Hey";
+                    }
+                    else{
+                        alert("Incorrect."); 
+                        attempt++;
+                    }
+                }
+                else{
+                    aDiv.removeChild(aButton);
+                }
+                
+            }
+            aButton.addEventListener("click", OnClickaButton);        
+        //dialogue
+        var OnClickbutton = function(){
+            alert("great.");
+            switch (confirm("did it feel great?")){
+            case true:
+                alert("good to hear.");
+                break;
+            case false:
+                alert("at least you're being honest.");
+            }
+            //
+            switch (confirm("you wanna get notified when I post something new here?")){
+            case true:
+                alert("well too bad, i'm never coming here again.");
+                break;
+            case false:
+                alert("you're missing out.");
+            }        
+            var osuID = prompt("what's your osu username?");
+            var theyAreATroll = false;
+            if(osuID === ""){
+            alert("how on earth?");
+            theyAreATroll = true;}
+            else{alert("ok, "+ osuID + ". gotcha.");}
+            alert("You know.. I never expected to actually be visited. Ever.");
+            //
+            switch (confirm("Press OK to ask why.")){
+            case true:
+                alert("Well . . .");
+                break;
+            case false:
+                alert("well screw you, this is my website. i'll tell anyway.");
+            }
+            //
+            alert("You see, my map will never get played. Let alone anyone spending their \"precious\" time deciphering the wingdings I left in the map.");
+            alert("But you. You found me. I don't know how. But you found me.");
+            alert("I don't even know what to say.");
+            alert("Other than . . .");
+            alert(". . .");
+            alert("Thanks. :-)");
+            if(!theyAreATroll){
+                alert(osuID+".");
+            }
+            else{
+                alert("kind stranger.");
+            }
+            //The Button
+            aDiv.appendChild(aButton);
+        };
+        button.addEventListener("click", OnClickbutton);
+    </script>
+</html>
